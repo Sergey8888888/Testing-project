@@ -1,30 +1,42 @@
-# React + TypeScript + Vite
+Задача
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Создать веб-страницу с использованием фреймворком Vue или React.
 
-Currently, two official plugins are available:
+Получить данные объектов из API путем REST-запроса. Используя данные отрисовать компоненты объектов в виде карточек с полями.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Реализовать сортировку объектов по значениям (год выпуска и стоимость).
 
-## Expanding the ESLint configuration
+Добавить возможность редактирования и удаления карточек на фронтенд части (изменение названия марки, модели и стоимости).
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Дополнительное задание:
+Реализовать отображение объектов на карте, использую их координаты. (API можно использовать любое)
 
-- Configure the top-level `parserOptions` property like this:
+**Плюсом будет использование TypeScript ***
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+P.S.Оформление UI на усмотрение
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Исходные данные
+
+API для работы с базой данных, которая хранит информацию об автомобилях.
+https://test.tspb.su/test-task
+
+Поддерживаемый метод:
+
+GET vehicles
+https://test.tspb.su/test-task/vehicles
+
+Пример ответа:
+
+[
+{
+ "id": 1,
+ "name": "Toyota",
+ "model": "Camry",
+ "year": 2021,
+ "color": "red",
+ "price": 21000,
+ "latitude": 55.753215,
+ "longitude": 37.620393
+},
+...
+]
