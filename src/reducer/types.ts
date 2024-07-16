@@ -17,7 +17,6 @@ export type State = {
 
 export type Action =
   | { type: 'cars/load'; payload: Car[] }
-  | { type: 'cars/add'; payload: Car }
   | { type: 'cars/remove'; payload: CarId }
   | { type: 'cars/update'; payload: Car };
 

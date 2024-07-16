@@ -10,6 +10,9 @@ const CarItem = ({ car }: { car: Car }): JSX.Element => {
   const [isEditing, setIsEditing] = useState(false);
   const [editedCar, setEditedCar] = useState(car);
 
+
+console.log(car,'---------');
+
   const handleRemoveCar = async (id: CarId): Promise<void> => {
     const res = await fetch(`https://test.tspb.su/test-task/vehicles/${id}`, {
       method: 'DELETE',
@@ -45,8 +48,24 @@ const CarItem = ({ car }: { car: Car }): JSX.Element => {
             onChange={(e) => setEditedCar({ ...editedCar, model: e.target.value })}
           />
           <input
+            value={editedCar.year}
+            onChange={(e) => setEditedCar({ ...editedCar, year: Number(e.target.value) })}
+          />
+          <input
+            value={editedCar.color}
+            onChange={(e) => setEditedCar({ ...editedCar, color: (e.target.value) })}
+          />
+          <input
             value={editedCar.price}
             onChange={(e) => setEditedCar({ ...editedCar, price: Number(e.target.value) })}
+          />
+          <input
+            value={editedCar.latitude}
+            onChange={(e) => setEditedCar({ ...editedCar, latitude: Number(e.target.value) })}
+          />
+          <input
+            value={editedCar.longitude}
+            onChange={(e) => setEditedCar({ ...editedCar, longitude: Number(e.target.value) })}
           />
           <button onClick={handleEditCar}>Save</button>
           <button onClick={() => setIsEditing(false)}>Cancel</button>
@@ -55,11 +74,11 @@ const CarItem = ({ car }: { car: Car }): JSX.Element => {
         <>
           <h2 className="car-page__item--name">{car.name}</h2>
           <h3 className="car-page__item--model">{car.model}</h3>
-          <h4 className="car-page__item--year">Year: {car.year}</h4>
-          <h4 className="car-page__item--color"> {car.color}</h4>
-          <h4 className="car-page__item--price">Price: {car.price}</h4>
-          <h4 className="car-page__item--latitude">Latitude: {car.latitude}</h4>
-          <h4 className="car-page__item--longitude">Longitude: {car.longitude}</h4>
+          <p className="car-page__item--year">Year: {car.year}</p>
+          <p className="car-page__item--color"> {car.color}</p>
+          <p className="car-page__item--price">Price: {car.price}</p>
+          <p className="car-page__item--latitude">Latitude: {car.latitude}</p>
+          <p className="car-page__item--longitude">Longitude: {car.longitude}</p>
           <button onClick={() => setIsEditing(true)}>Edit</button>
           <button onClick={() => handleRemoveCar(car.id)}>Remove</button>
         </>

@@ -12,11 +12,6 @@ export const reducer = (state: State, action: Action): State => {
         ...state,
         cars: action.payload,
       };
-    case 'cars/add':
-      return {
-        ...state,
-        cars: [...state.cars, action.payload],
-      };
     case 'cars/remove':
       return {
         ...state,
@@ -31,3 +26,4 @@ export const reducer = (state: State, action: Action): State => {
       return state;
   }
 };
+
